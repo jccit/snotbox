@@ -1,0 +1,19 @@
+{
+    "name": "s!box example",
+    "version": "0.1",
+    "sharedassets": "*.*",
+
+    "depends":
+    [
+        "base"
+    ],
+
+    "gamemodes":
+    [
+        {
+            "name": "snexample",
+            "title": "s!box example",
+            "description": "A test gamemode for the s!box API"
+        }
+    ]
+}
