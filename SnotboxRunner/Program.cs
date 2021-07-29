@@ -1,5 +1,5 @@
 ﻿using System;
-using Snotbox;
+using Sandbox;
 
 namespace SnotboxRunner
 {
@@ -7,9 +7,8 @@ namespace SnotboxRunner
     {
         static void Main(string[] args)
         {
-            Snotbox.Game game = new Snotbox.Game();
-
-            Console.WriteLine("Hello World!");
+            Sandbox.Game game = new Sandbox.Game();
+            game.Dev_AddPlayer("test");
         }
     }
 }
