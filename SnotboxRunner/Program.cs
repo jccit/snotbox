@@ -9,7 +9,7 @@ namespace SnotboxRunner
     {
         static void Main(string[] args)
         {
-            string addonPath = Path.Combine(Environment.CurrentDirectory, "../example");
+            string addonPath = Path.Combine(Environment.CurrentDirectory, "example");
             var addon = new Addon(addonPath);
 
             Console.WriteLine("Printing all types found in addon");

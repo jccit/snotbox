@@ -36,7 +36,7 @@ namespace SnotboxRunner
 
             IEnumerable<MetadataReference> references = new[]{
                 MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-                MetadataReference.CreateFromFile(Path.Combine(Environment.CurrentDirectory, "bin/Debug/net5.0/Snotbox.dll")),
+                MetadataReference.CreateFromFile(Path.Combine(Environment.CurrentDirectory, "Snotbox/bin/Debug/net5.0/Snotbox.dll")),
             };
 
             foreach (var dll in coreDlls)

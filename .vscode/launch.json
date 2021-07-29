@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/SnotboxRunner/bin/Debug/net5.0/SnotboxRunner.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/SnotboxRunner",
+            "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false
         },
