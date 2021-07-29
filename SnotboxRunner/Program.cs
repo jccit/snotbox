@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using Sandbox;
 
 namespace SnotboxRunner
@@ -7,8 +9,16 @@ namespace SnotboxRunner
     {
         static void Main(string[] args)
         {
-            Sandbox.Game game = new Sandbox.Game();
-            game.Dev_AddPlayer("test");
+            string addonPath = Path.Combine(Environment.CurrentDirectory, "../example");
+            var addon = new Addon(addonPath);
+
+            Console.WriteLine("Printing all types found in addon");
+            addon.PrintTypes();
+
+            var gameClass = addon.GetGameClassType();
+            Sandbox.Game game = (Sandbox.Game)addon.CreateInstance(gameClass);
+
+            game.Dev_AddPlayer("player");
         }
     }
 }

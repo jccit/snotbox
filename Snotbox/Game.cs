@@ -16,8 +16,9 @@ namespace Sandbox
 
         public void Dev_AddPlayer(string name)
         {
-            Client.All.Add(new Client(name));
-            Console.WriteLine("[BASE GAME] Added player: " + name + ". Total players: " + Client.All.Count);
+            var newClient = new Client(name);
+            Client.All.Add(newClient);
+            ClientJoined(newClient);
         }
 
         #region Sandbox API
@@ -25,7 +26,7 @@ namespace Sandbox
         /// <summary>
         /// Called when a player has joined the server
         /// </summary>
-        public void ClientJoined(Client player)
+        public virtual void ClientJoined(Client player)
         {
             Console.WriteLine("[BASE GAME] Client joined");
         }
@@ -33,7 +34,7 @@ namespace Sandbox
         /// <summary>
         /// Called when a player has left the server
         /// </summary>
-        public void ClientDisconnect(Client player)
+        public virtual void ClientDisconnect(Client player)
         {
             Console.WriteLine("[BASE GAME] Client disconnected");
         }
@@ -41,7 +42,7 @@ namespace Sandbox
         /// <summary>
         /// Player has tried to use noclip
         /// </summary>
-        public void DoPlayerNoclip(Client player)
+        public virtual void DoPlayerNoclip(Client player)
         {
 
         }
@@ -49,7 +50,7 @@ namespace Sandbox
         /// <summary>
         /// Player has tried to suicide
         /// </summary>
-        public void DoPlayerSuicide(Client player)
+        public virtual void DoPlayerSuicide(Client player)
         {
 
         }

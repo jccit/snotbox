@@ -4,22 +4,22 @@ namespace Sandbox
 {
     public class Player
     {
-        public void Spawn()
+        public virtual void Spawn()
         {
             Console.WriteLine("[BASE PLAYER] Spawned");
         }
 
-        public void Respawn()
+        public virtual void Respawn()
         {
             Console.WriteLine("[BASE PLAYER] Respawning");
         }
 
-        public void OnKilled()
+        public virtual void OnKilled()
         {
             Console.WriteLine("[BASE PLAYER] Killed");
         }
 
-        public void TakeDamage(DamageInfo info)
+        public virtual void TakeDamage(DamageInfo info)
         {
             Console.WriteLine("[BASE PLAYER] Took damage");
         }
