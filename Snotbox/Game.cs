@@ -21,7 +21,23 @@ namespace Sandbox
             ClientJoined(newClient);
         }
 
+        public void Dev_Simulate()
+        {
+            foreach (var client in Client.All)
+            {
+                Simulate(client);
+            }
+        }
+
         #region Sandbox API
+
+        /// <summary>
+        /// Runs every tick
+        /// </summary>
+        public virtual void Simulate(Client client)
+        {
+            client.Pawn.Simulate(client);
+        }
 
         /// <summary>
         /// Called when a player has joined the server

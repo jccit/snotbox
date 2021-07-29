@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
+using System.Threading.Tasks;
 using Sandbox;
 
 namespace SnotboxRunner
@@ -19,6 +19,16 @@ namespace SnotboxRunner
             Sandbox.Game game = (Sandbox.Game)addon.CreateInstance(gameClass);
 
             game.Dev_AddPlayer("player");
+
+            var task = Task.Run(async () => {
+                while (true)
+                {
+                    game.Dev_Simulate();
+                    await Task.Delay(16);
+                }
+            });
+
+            task.Wait();
         }
     }
 }

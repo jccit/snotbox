@@ -6,7 +6,7 @@ namespace Sandbox
     {
         public override void Simulate()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

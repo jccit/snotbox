@@ -16,5 +16,12 @@ namespace SnboxExample
 
             base.Respawn();
         }
+
+        public override void Simulate(Client client)
+        {
+            base.Simulate(client);
+
+            Console.WriteLine("Sim");
+        }
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace Sandbox
 {
-    public class Player : Entity
+    public class Player : Pawn
     {
         public bool EnableAllCollisions = false;
         public bool EnableDrawing = false;
@@ -26,6 +26,15 @@ namespace Sandbox
         public virtual void TakeDamage(DamageInfo info)
         {
             Console.WriteLine("[BASE PLAYER] Took damage");
+        }
+
+        public override void Simulate(Client client)
+        {
+            base.Simulate(client);
+
+            Controller.Simulate();
+            Animator.Tick();
+            Camera.Update();
         }
     }
 }

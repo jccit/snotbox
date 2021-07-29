@@ -10,7 +10,7 @@ namespace Sandbox
         /// </summary>
         public static List<Client> All;
 
-        public Player Pawn { get; set; }
+        public Pawn Pawn { get; set; }
         public string Name;
 
         public Client(string Name)
