@@ -2,8 +2,17 @@ using System;
 
 namespace Sandbox
 {
-    public class Player
+    public class Player : Entity
     {
+        public bool EnableAllCollisions = false;
+        public bool EnableDrawing = false;
+        public bool EnableHideInFirstPerson = false;
+        public bool EnableShadowInFirstPerson = false;
+
+        public PlayerController Controller;
+        public PlayerAnimator Animator;
+        public BaseCamera Camera;
+
         public virtual void Spawn()
         {
             Console.WriteLine("[BASE PLAYER] Spawned");
@@ -12,11 +21,6 @@ namespace Sandbox
         public virtual void Respawn()
         {
             Console.WriteLine("[BASE PLAYER] Respawning");
-        }
-
-        public virtual void OnKilled()
-        {
-            Console.WriteLine("[BASE PLAYER] Killed");
         }
 
         public virtual void TakeDamage(DamageInfo info)

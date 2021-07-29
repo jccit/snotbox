@@ -9,6 +9,11 @@ namespace SnboxExample
         public override void Respawn()
         {
             Console.WriteLine("I've just respawned!");
+
+            Controller = new WalkController();
+            Animator = new StandardPlayerAnimator();
+            Camera = new ThirdPersonCamera();
+
             base.Respawn();
         }
     }
